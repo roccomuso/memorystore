@@ -1,2 +1,55 @@
 # memorystore
 express-session full featured MemoryStore layer without leaks!
+
+A session store implementation for Express using [lru-cache](https://github.com/isaacs/node-lru-cache).
+
+Because the default `MemoryStore` for [express-session](https://github.com/expressjs/session) will lead to a memory leak due to it haven't a suitable way to make them expire.
+The sessions are still stored in memory, so they're not shared with other processes or services.
+
+## Setup
+
+    npm install express-session memorystore
+
+Pass the `express-session` store into `memorystore` to create a `MemoryStore` constructor.
+
+```javascript
+var session = require('express-session')
+var MemoryStore = require('memorystore')(session)
+
+app.use(session({
+    store: new MemoryStore(options),
+    secret: 'keyboard cat'
+}))
+```
+
+## Options
+
+* `checkPeriod` The period in ms, as a number, used for the automatic delete check interval. By default every 24 hour.
+* `max` The maximum size of the cache, checked by applying the length
+  function to all values in the cache.  It defaults to `Infinity`.
+* `ttl` Session TTL (expiration) in milliseconds. Defaults to session.maxAge (if set), or one day. This may also be set to a function of the form `(options, sess, sessionID) => number`.
+* `dispose` Function that is called on sessions when they are dropped
+  from the cache.  This can be handy if you want to close file
+  descriptors or do other cleanup tasks when sessions are no longer
+  accessible.  Called with `key, value`.  It's called *before*
+  actually removing the item from the internal cache, so if you want
+  to immediately put it back in, you'll have to do that in a
+  `nextTick` or `setTimeout` callback or it won't do anything.
+* `stale` By default, if you set a `maxAge`, it'll only actually pull
+  stale items out of the cache when you `get(key)`.  (That is, it's
+  not pre-emptively doing a `setTimeout` or anything.)  If you set
+  `stale:true`, it'll return the stale value before deleting it.  If
+  you don't set this, then it'll return `undefined` when you try to
+  get a stale entry, as if it had already been deleted.
+* `noDisposeOnSet` By default, if you set a `dispose()` method, then
+  it'll be called whenever a `set()` operation overwrites an existing
+  key.  If you set this option, `dispose()` will only be called when a
+  key falls out of the cache, not when it is overwritten.
+
+## Debug
+
+To enable debug set the env var `DEBUG=memorystore`
+
+# License
+
+MIT
