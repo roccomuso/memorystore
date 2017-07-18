@@ -1,0 +1,35 @@
+{
+  "name": "memorystore",
+  "version": "1.0.0",
+  "description": "express-session full featured MemoryStore layer without leaks!",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roccomuso/memorystore.git"
+  },
+  "keywords": [
+    "express-session",
+    "session",
+    "memory",
+    "store",
+    "memorystore",
+    "noleak",
+    "ram"
+  ],
+  "author": "Rocco Musolino (roccomuso)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/roccomuso/memorystore/issues"
+  },
+  "homepage": "https://github.com/roccomuso/memorystore#readme",
+  "dependencies": {
+    "debug": "^2.6.8",
+    "lru-cache": "^4.1.1"
+  },
+  "devDependencies": {
+    "standard": "^10.0.2"
+  }
+}
