@@ -1,10 +1,10 @@
 {
   "name": "memorystore",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "express-session full featured MemoryStore layer without leaks!",
   "main": "index.js",
   "scripts": {
-    "test": "standard"
+    "test": "standard && mocha --bail test/"
   },
   "repository": {
     "type": "git",
@@ -30,6 +30,10 @@
     "lru-cache": "^4.1.1"
   },
   "devDependencies": {
+    "mocha": "^3.4.2",
     "standard": "^10.0.2"
+  },
+  "standard": {
+    "env": ["mocha"]
   }
 }
