@@ -1,6 +1,6 @@
 {
   "name": "memorystore",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "express-session full featured MemoryStore layer without leaks!",
   "main": "index.js",
   "scripts": {
