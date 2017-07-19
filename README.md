@@ -1,14 +1,16 @@
-# memorystore
-express-session full featured MemoryStore layer without leaks!
+# memorystore [![NPM Version](https://img.shields.io/npm/v/memorystore.svg)](https://www.npmjs.com/package/memorystore) [![Build Status](https://travis-ci.org/roccomuso/memorystore.svg?branch=master)](https://travis-ci.org/roccomuso/memorystore) [![Dependency Status](https://david-dm.org/roccomuso/memorystore.png)](https://david-dm.org/roccomuso/memorystore) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+
+> express-session full featured `MemoryStore` module without leaks!
 
 A session store implementation for Express using [lru-cache](https://github.com/isaacs/node-lru-cache).
 
 Because the default `MemoryStore` for [express-session](https://github.com/expressjs/session) will lead to a memory leak due to it haven't a suitable way to make them expire.
+
 The sessions are still stored in memory, so they're not shared with other processes or services.
 
 ## Setup
 
-    npm install express-session memorystore
+    $ npm install express-session memorystore
 
 Pass the `express-session` store into `memorystore` to create a `MemoryStore` constructor.
 
@@ -49,6 +51,10 @@ app.use(session({
 ## Debug
 
 To enable debug set the env var `DEBUG=memorystore`
+
+# Author
+
+Rocco Musolino ([@roccomuso](https://twitter.com/roccomuso))
 
 # License
 
