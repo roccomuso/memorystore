@@ -43,6 +43,7 @@ app.use(session({
   `stale:true`, it'll return the stale value before deleting it.  If
   you don't set this, then it'll return `undefined` when you try to
   get a stale entry, as if it had already been deleted.
+* `serializer` An object containing `stringify` and `parse` methods compatible with Javascript's `JSON` to override the serializer used.
 
 ## Debug
 
