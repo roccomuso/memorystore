@@ -1,6 +1,6 @@
 {
   "name": "memorystore",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "express-session full featured MemoryStore layer without leaks!",
   "main": "index.js",
   "scripts": {
@@ -26,8 +26,8 @@
   },
   "homepage": "https://github.com/roccomuso/memorystore#readme",
   "dependencies": {
-    "debug": "^2.6.8",
-    "lru-cache": "^4.1.1"
+    "debug": "2.6.8",
+    "lru-cache": "~4.1.1"
   },
   "devDependencies": {
     "mocha": "^3.4.2",
