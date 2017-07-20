@@ -4,7 +4,7 @@
   "description": "express-session full featured MemoryStore layer without leaks!",
   "main": "index.js",
   "scripts": {
-    "test": "standard && mocha --bail test/"
+    "test": "mocha --bail test/"
   },
   "repository": {
     "type": "git",
@@ -30,8 +30,7 @@
     "lru-cache": "~2.7.3"
   },
   "devDependencies": {
-    "mocha": "3.4.2",
-    "standard": "10.0.2"
+    "mocha": "2.5.3"
   },
   "standard": {
     "env": ["mocha"]
