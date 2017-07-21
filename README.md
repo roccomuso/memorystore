@@ -45,6 +45,10 @@ app.use(session({
   get a stale entry, as if it had already been deleted.
 * `serializer` An object containing `stringify` and `parse` methods compatible with Javascript's `JSON` to override the serializer used.
 
+## Methods
+
+`memorystore` implements all the **required**, **recommended** and **optional** methods of the [express-session](https://github.com/expressjs/session#session-store-implementation) store. Plus a `stopInterval()` method to clear the automatic delete check interval.
+
 ## Debug
 
 To enable debug set the env var `DEBUG=memorystore`
