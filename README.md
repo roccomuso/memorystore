@@ -19,14 +19,16 @@ var session = require('express-session')
 var MemoryStore = require('memorystore')(session)
 
 app.use(session({
-    store: new MemoryStore(options),
+    store: new MemoryStore({
+      checkPeriod: 86400000 // prune expired entries every 24h
+    }),
     secret: 'keyboard cat'
 }))
 ```
 
 ## Options
 
-* `checkPeriod` Define how long MemoryStore will check for expired. The period is in ms. By default every 24 hour. Pass `0` or `false` to disable the automatic check.
+* `checkPeriod` Define how long MemoryStore will check for expired. The period is in ms. The automatic check is disabled by default! Not setting this is kind of silly, since that's the whole purpose of this lib.
 * `max` The maximum size of the cache, checked by applying the length
   function to all values in the cache.  It defaults to `Infinity`.
 * `ttl` Session TTL (expiration) in milliseconds. Defaults to session.maxAge (if set), or one day. This may also be set to a function of the form `(options, sess, sessionID) => number`.
@@ -47,7 +49,11 @@ app.use(session({
 
 ## Methods
 
-`memorystore` implements all the **required**, **recommended** and **optional** methods of the [express-session](https://github.com/expressjs/session#session-store-implementation) store. Plus a `startInterval()` and `stopInterval()` methods to start/clear the automatic check for expired.
+`memorystore` implements all the **required**, **recommended** and **optional** methods of the [express-session](https://github.com/expressjs/session#session-store-implementation) store. Plus a few more:
+
+- `startInterval()` and `stopInterval()` methods to start/clear the automatic check for expired.
+
+- `prune()` that you can use to manually remove only the expired entries from the store.
 
 ## Debug
 
