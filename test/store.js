@@ -5,7 +5,7 @@ var MemoryStore = require('../')({Store: function () {}})
 var session = {MemoryStore: MemoryStore}
 
 describe('MemoryStore', function (done) {
-  afterEach(function() {
+  afterEach(function () {
     // runs after each test in this block
     this.store.stopInterval()
   })
