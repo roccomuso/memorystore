@@ -190,6 +190,25 @@ describe('MemoryStore', function (done) {
     }, 500)
   })
 
+  it('should disable automatic check for expired', function (done) {
+    this.store = new session.MemoryStore({checkPeriod: false})
+    var store = this.store
+
+    store.set('foo', {cookie: {maxAge: 150}})
+    store.set('bar', {cookie: {maxAge: 150}})
+    store.length(function (err, count) {
+      if (err) return done(err)
+      assert.equal(count, 2, 'should count 2 entries')
+    })
+    setTimeout(function () {
+      store.length(function (err, count) {
+        if (err) return done(err)
+        assert.equal(count, 2, 'expired entries should not be pruned')
+        done()
+      })
+    }, 500)
+  })
+
   it('should touch a given entry', function (done) {
     this.store = new session.MemoryStore()
     var store = this.store
