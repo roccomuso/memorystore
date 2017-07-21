@@ -13,12 +13,11 @@ describe('MemoryStore', function (done) {
   it('constructor should use default options', function (done) {
     this.store = new session.MemoryStore()
     var store = this.store
-    var oneDay = 3600000
     assert.ok(store.options, 'should have an option object')
     assert.equal(store.options.max, Infinity, 'max option should be Infinity')
-    assert.equal(store.options.checkPeriod, oneDay, 'checkPeriod equal to ' + oneDay + ' by default')
+    assert.equal(store.options.checkPeriod, undefined, 'checkPeriod undefined by default')
     assert.ok(store.store, 'should have the LRU cache store')
-    assert.ok(store._checkInterval, 'should have the pruning loop')
+    assert.equal(store._checkInterval, undefined, 'should not have the pruning loop')
     done()
   })
 
@@ -36,6 +35,13 @@ describe('MemoryStore', function (done) {
     assert.equal(store.options.ttl, 36000, 'should set the TTL')
     assert.equal(store.options.dispose, null, 'should set dispose')
     assert.equal(store.options.stale, true, 'should set stale')
+    done()
+  })
+
+  it('should not set the interval to check for expired entries by default', function (done) {
+    this.store = new session.MemoryStore()
+    var store = this.store
+    assert.equal(store._checkInterval, undefined, 'should not exists')
     done()
   })
 
@@ -171,7 +177,7 @@ describe('MemoryStore', function (done) {
     }, 300)
   })
 
-  it('should prune expired entries', function (done) {
+  it('should enable automatic prune for expired entries', function (done) {
     this.store = new session.MemoryStore({checkPeriod: 300})
     var store = this.store
 
@@ -190,8 +196,8 @@ describe('MemoryStore', function (done) {
     }, 500)
   })
 
-  it('should disable automatic check for expired', function (done) {
-    this.store = new session.MemoryStore({checkPeriod: false})
+  it('automatic check for expired entries should be disabled', function (done) {
+    this.store = new session.MemoryStore()
     var store = this.store
 
     store.set('foo', {cookie: {maxAge: 150}})
