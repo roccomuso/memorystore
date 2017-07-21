@@ -4,7 +4,7 @@
   "description": "express-session full featured MemoryStore layer without leaks!",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --bail test/"
+    "test": "mocha --check-leaks --bail --no-exit test/"
   },
   "repository": {
     "type": "git",
