@@ -10,6 +10,9 @@
     "type": "git",
     "url": "git+https://github.com/roccomuso/memorystore.git"
   },
+  "engines": {
+    "node": ">=0.8"
+  },
   "keywords": [
     "express-session",
     "session",
@@ -27,7 +30,7 @@
   "homepage": "https://github.com/roccomuso/memorystore#readme",
   "dependencies": {
     "debug": "3.1.0",
-    "lru-cache": "~2.7.3"
+    "lru-cache": "^4.0.3"
   },
   "devDependencies": {
     "mocha": "2.5.3"
