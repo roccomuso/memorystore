@@ -1,4 +1,4 @@
-# memorystore [![NPM Version](https://img.shields.io/npm/v/memorystore.svg)](https://www.npmjs.com/package/memorystore) ![node](https://img.shields.io/node/v/memorystore.svg) [![Build Status](https://travis-ci.org/roccomuso/memorystore.svg?branch=master)](https://travis-ci.org/roccomuso/memorystore) [![Dependency Status](https://david-dm.org/roccomuso/memorystore.png)](https://david-dm.org/roccomuso/memorystore) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+# memorystore [![NPM Version](https://img.shields.io/npm/v/memorystore.svg)](https://www.npmjs.com/package/memorystore) ![node](https://img.shields.io/node/v/memorystore.svg) [![Build Status](https://travis-ci.org/roccomuso/memorystore.svg?branch=master)](https://travis-ci.org/roccomuso/memorystore) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 > express-session full featured `MemoryStore` module without leaks!
 
