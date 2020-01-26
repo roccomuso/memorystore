@@ -48,6 +48,7 @@ app.use(session({
   get a stale entry, as if it had already been deleted.
 * `noDisposeOnSet` By default, if you set a `dispose()` method, then it'll be called whenever a `set()` operation overwrites an existing key. If you set this option, `dispose()` will only be called when a key falls out of the cache, not when it is overwritten.
 * `serializer` An object containing `stringify` and `parse` methods compatible with Javascript's `JSON` to override the serializer used.
+* `secret` Enables transparent encryption of sessions to support [OWASP session management](https://owasp.org/www-project-cheat-sheets/cheatsheets/Session_Management_Cheat_Sheet.html) recommendations
 
 ## Methods
 

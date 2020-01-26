@@ -30,6 +30,7 @@
   "homepage": "https://github.com/roccomuso/memorystore#readme",
   "dependencies": {
     "debug": "3.1.0",
+    "kruptein": "^2.0.5",
     "lru-cache": "^4.0.3"
   },
   "devDependencies": {
