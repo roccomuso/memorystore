@@ -1,11 +1,11 @@
 language: node_js
 
 node_js:
-  - "0.10"
-  - "4.8"
-  - "5.12"
   - "6.10"
   - "7"
+  - "10"
+  - "12"
+  - "14"
 
 cache:
   directories:
