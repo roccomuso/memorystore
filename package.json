@@ -3,6 +3,7 @@
   "version": "1.6.3",
   "description": "express-session full featured MemoryStore layer without leaks!",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "mocha --check-leaks --bail --no-exit test/"
   },
