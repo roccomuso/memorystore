@@ -60,7 +60,7 @@ describe('MemoryStore', function (done) {
     })
   })
 
-  it('should delete the first item', function () {
+  it('should delete the first item', function (done) {
     this.store = new session.MemoryStore({max: 10})
     var store = this.store
 
@@ -77,7 +77,7 @@ describe('MemoryStore', function (done) {
     })
   })
 
-  it('should delete the last item', function () {
+  it('should delete the last item', function (done) {
     this.store = new session.MemoryStore({max: 10})
     var store = this.store
 
@@ -91,7 +91,6 @@ describe('MemoryStore', function (done) {
     store.length(function (err, length) {
       if (err) return done(err)
       assert.equal(length, 8)
-      done()
     })
 
     for (i = 10; i < 12; i++) {
