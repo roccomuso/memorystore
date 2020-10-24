@@ -30,11 +30,11 @@
   },
   "homepage": "https://github.com/roccomuso/memorystore#readme",
   "dependencies": {
-    "debug": "3.1.0",
+    "debug": "^4.3.0",
     "lru-cache": "^4.0.3"
   },
   "devDependencies": {
-    "mocha": "2.5.3"
+    "mocha": "8.2.0"
   },
   "standard": {
     "env": [
