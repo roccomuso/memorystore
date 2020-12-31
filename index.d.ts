@@ -1,6 +1,4 @@
-import expressSession, {
-	MemoryStore as ExpressMemoryStore,
-} from "express-session";
+import * as expressSession from "express-session";
 
 interface MemoryStoreOptions {
 	/**
@@ -55,7 +53,7 @@ interface MemoryStoreOptions {
 	};
 }
 
-declare class MemoryStore extends ExpressMemoryStore {
+declare class MemoryStore extends expressSession.MemoryStore {
 	constructor(options: MemoryStoreOptions);
 	/** method to start the automatic check for expired. */
 	startInterval(): void;
