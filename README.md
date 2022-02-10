@@ -15,8 +15,8 @@ The sessions are still stored in memory, so they're not shared with other proces
 Pass the `express-session` store into `memorystore` to create a `MemoryStore` constructor.
 
 ```javascript
-var session = require('express-session')
-var MemoryStore = require('memorystore')(session)
+const session = require('express-session')
+const MemoryStore = require('memorystore')(session)
 
 app.use(session({
     cookie: { maxAge: 86400000 },
