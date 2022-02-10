@@ -34,7 +34,7 @@
     "lru-cache": "^4.0.3"
   },
   "devDependencies": {
-    "mocha": "8.2.0"
+    "mocha": "9.2.0"
   },
   "standard": {
     "env": [
