@@ -5,6 +5,7 @@
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
+    "lint": "XDG_CACHE_HOME=./.cache standard",
     "test": "mocha --check-leaks --bail --no-exit test/"
   },
   "repository": {
@@ -34,7 +35,8 @@
     "lru-cache": "^4.0.3"
   },
   "devDependencies": {
-    "mocha": "9.2.0"
+    "mocha": "9.2.0",
+    "standard": "^17.1.2"
   },
   "standard": {
     "env": [

@@ -4,7 +4,7 @@ import expressSession, {
 
 interface MemoryStoreOptions {
 	/**
-	 * Define how long MemoryStore will check for expired.
+	 * Define how often MemoryStore checks for expired entries.
 	 * The period is in ms. The automatic check is disabled by default!
 	 * Not setting this is kind of silly, since that's the whole purpose of
 	 * this lib.
@@ -46,7 +46,7 @@ interface MemoryStoreOptions {
 	 */
 	noDisposeOnSet?: boolean;
 	/**
-	 * An object compatible with Javascript's JSON to override the
+	 * An object compatible with JavaScript's JSON to override the
 	 * serializer used.
 	 */
 	serializer?: {
